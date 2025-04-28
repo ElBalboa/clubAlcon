@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Alcon Club</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'static/css/estilo.css' %}">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="d-flex justify-content-between align-items-center p-3">
+    <div>
+      <button class="nav-btn">NOSOTROS</button>
+    </div>
+    <div class="input-group w-50">
+      <input type="text" class="form-control text-center" placeholder="¿QUÉ DEPORTE TE INTERESA?">
+      <button class="btn btn-dark"><i class="bi bi-mic"></i></button>
+    </div>
+    <div>
+      <button class="nav-btn">INICIO</button>
+    </div>
+  </nav>
+
+  <!-- Título -->
+  <div class="text-center my-4">
+    <h1><strong>ALCON CLUB</strong></h1>
+    <p class="lead">Explora y descubre las diferentes canchas para reservar!</p>
+  </div>
+
+  <!-- Explorador de canchas -->
+  <div class="container search-box rounded-box">
+    <h5 class="text-center mb-3">Explorador de canchas</h5>
+    <form method="GET" action="{% url 'buscar_reserva' %}">
+      <div class="row">
+        <div class="col-md-6">
+          <input type="text" class="form-control" name="ubicacion" placeholder="Ubicación">
+        </div>
+        <div class="col-md-6">
+          <input type="date" class="form-control" name="fecha">
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <input type="text" class="form-control" name="deporte" placeholder="Deporte">
+        </div>
+        <div class="col-md-3">
+          <select class="form-select" name="adultos">
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <select class="form-select" name="ninos">
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+          </select>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <button class="btn btn-custom px-5">BUSCAR</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center mt-4">
+    <p>@clubdeportivoalcon</p>
+    <i class="bi bi-instagram"></i>
+    <i class="bi bi-twitter"></i>
+  </footer>
+</body>
+</html>
