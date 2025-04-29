@@ -22,3 +22,4 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('buscar/', views.buscar_reserva, name='buscar_reserva'),  # si tienes una vista de búsqueda
 ]
+hola
